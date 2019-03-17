@@ -191,7 +191,7 @@ public class LatinSquare {
 	 *            - one dimensional array to check for duplicates
 	 * @return - returns 'true' if any of the elements are duplicate
 	 */
-	public boolean hasDuplicates(int[] arr) {
+	public final boolean hasDuplicates(int[] arr) {
 
 		// TODO: Return 'true' if any element in arr is duplicate
 
