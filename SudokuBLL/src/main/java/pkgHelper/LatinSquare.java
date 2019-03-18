@@ -1,6 +1,10 @@
 package pkgHelper;
 
 import java.util.Arrays;
+import java.util.ArrayList;
+
+import pkgEnum.ePuzzleViolation;
+import org.apache.commons.lang.ArrayUtils;
 
 public class LatinSquare {
  //
@@ -266,4 +270,58 @@ public class LatinSquare {
 	public void setLatinSquare(int[][] latinSquare) {
 		LatinSquare = latinSquare;
 	}
+protected boolean hasDuplicates() throws Exception {
+		
+		for (int x = 0; <LatinSquare.length; x++) {
+			if (bIgnoreZero) {
+			int[] carray = RemoveZeros(Arrays.copyOf(getRow(x), getRow(x).length));
+			if (hasDuplicates(carray))
+				addPV(new PuzzleViolation(ePuzzleViolation.DupRow,x));
+			}
+			else {
+				if (hasDuplicates(getRow(x)))
+					addPV(new PuzzleViolation(ePuzzleViolation.DupRow,x));
+			}
+		}
+		for (int y = 0; <LatinSquare.length; y++) {
+		if (bIgnoreZero) {
+			int[] carray = RemoveZeros(Arrays.copyOf(getColumn(y), getColumn(y).length));
+			if (hasDuplicates(carray))
+				addPV(new PuzzleViolation(ePuzzleViolation.DupCol,y));
+			}
+			else {
+				if (hasDuplicates(getColumn(y)))
+					addPV(new PuzzleViolation(ePuzzleViolation.DupCol,y));
+			}
+		}
+	
+	public ArrayList<PuzzleViolation> getPV() {
+		return PV;
+	}
+	
+	public void addPV(PuzzleViolation PV) {
+		PV.add(PV);
+		}
+	
+	public void clearPV() {
+		PV.clear();
+	}
+	
+	public boolean isbIgnoreZeros() {
+		return isbIgnoreZeros;
+	}
+	public void setbIgnoreZeros(boolean setbIgnoreZeros) {
+		this.isbIgnoreZeros = bIgnoreZeros;
+	}
+	private int[] RemoveZeros(int[] arr) {
+		int[] array = arr;
+		while (ArrayUtils.contains(array, 0)) {
+			array = ArrayUtils. removeElement(arr, 0);
+		}
+		return array;
+		}
+	
+}
+
+
 }
