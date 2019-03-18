@@ -1,5 +1,8 @@
 package pkgHelper;
 import pkgEnum.ePuzzleViolation;
+import java.util.Arrays;
+import java.util.ArrayList;
+import org.apache.commons.lang.ArrayUtils;
 
 public class PuzzleViolation {
 	private ePuzzleViolation pv;

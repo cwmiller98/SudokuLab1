@@ -1,6 +1,7 @@
 package pkgHelper;
 
 import java.util.Arrays;
+
 import java.util.ArrayList;
 
 import pkgEnum.ePuzzleViolation;
@@ -15,6 +16,8 @@ public class LatinSquare {
 	 * @since Lab #1
 	 */
 	private int[][] LatinSquare;
+	private ArrayList <PuzzleViolation> PV = new ArrayList<PuzzleViolation>();
+	private boolean bIgnoreZeros = false;
 
 	/**
 	 * No-arg constructor, make it public, don't do anything in the constructor
@@ -270,6 +273,7 @@ public class LatinSquare {
 	public void setLatinSquare(int[][] latinSquare) {
 		LatinSquare = latinSquare;
 	}
+
 protected boolean hasDuplicates() throws Exception {
 		
 		for (int x = 0; <LatinSquare.length; x++) {
